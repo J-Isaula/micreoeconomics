@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Microeconomía",
+    "section": "",
+    "text": "Welcome\nBienvenidos al curso de Microeconomía II, en este sitio web trataremos de recordar y fundamentar la temática sobre las matemáticas de la optimización, tema fundamental para la comprensión de la asignatura. Aquí preparo un resumen del libro de Nicholson capítulo 2, si desea profundizar más al respecto, sugiero revise el capítulo completo ingresando al siguiente link.\nMuchos de los modelos económicos parten del supuesto que un agente quiere determinar el valor óptimo de una función. En el caso de los consumidores, esa función mide la utilidad que estos obtienen de sus compras y, en el de las empresas, mide las ganancias de éstas. Sin embargo, en ambos casos, las cuestiones matemáticas formales de la solución son muy similares. En este material se analizarán las matemáticas que son comunes a todo este tipo de problemas. Para aquellos que esten familiarizados con el cálculo multivariante, este material servira de repaso. Para aquellos que sólo estén familiarizados con algunos conceptos del cálculo básico, este material les proporcionará las bases necesarias para comenzar a analizar el cálculo aplicado a la construcción de modelos microeconómicos."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Maximización de una función con una variable",
+    "section": "",
+    "text": "Comencemos con un ejemplo sencillo. Suponga que el administrador de un empresa quiere maximizar las ganancias que obtendrá de la venta de un bien determinado. Llamemos a estas ganancias \\((\\pi)\\) que dependeran de la cantidad \\((q)\\) que venden de ese bien. Matemáticamente, esto es \\[\\pi = f(q)\\]\nLa siguiente figura muestra una posible relación entre \\(\\pi\\) y \\(q\\). Es evidente que para obtener la ganancia máxima, el administrador debe producir \\(q^*\\), con lo cual obtendrá \\(\\pi^*\\) ganancias.\n\n\n\nSi un administrador quiere alcanzar el nivel de producción que maximiza las ganancias, tendría que producir q*. Notese que en q*, \\(\\frac{d \\pi}{dq} = 0\\)."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Funciones con varias variables",
+    "section": "",
+    "text": "Los problemas económicos no suelen implicar funciones de una sola variable. La mayor parte de las metas que interesan a los agentes económicos dependen de varias variables y ellos deben elegir de entre éstas. Por ejemplo, la utilidad que obtiene un individuo de sus actividades como consumidor dependerá de la cantidad que consuma de cada bien. En el caso de la función de producción de una empresa, la cantidad producida dependerá de la cantidad de trabajo, capital y tierra dedicados a la producción. En estas circunstancias, el hecho de que esta variable \\((y)\\) depende de una serie de otras variables \\((x_1,x_2, . . . , x_n)\\) se escribe\n\\[\ny = f(x_1,x_2, . . . , x_n)\n\\]"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Elasticidad: definición general",
+    "section": "",
+    "text": "Los economistas utilizan las elasticidades para resumir casi todos los efectos cuantitativos que les interesan. Dado que estas medidas se concentran en el efecto proporcional que el cambio de una variable tiene en otra, éstas no están sujetas a unidades; es decir, las unidades “se cancelan” cuando se calcula la elasticidad. Por ejemplo, suponga que \\(y\\) es función de \\(x\\) y, posiblemente, de otras variables. Por tanto, la elasticidad de \\(y\\) con relación a \\(x\\) (denotada como \\(e_{y,x}\\)) se define como\n\\[\ne_{y,x} = \\frac{\\frac{\\triangle y}{y}}{\\frac{\\triangle x}{x}} = \\frac{\\triangle y}{\\triangle x}\\cdot \\frac{x}{y} = \\frac{\\partial y}{\\partial x}\\cdot \\frac{x}{y}\\hspace{2cm} (3)\n\\] Nótese que, independientemente de cómo se midan \\(y\\) y \\(x\\) las unidades de medida se cancelan, porque aparecen tanto en un numerador como en un denominador. Notese también que, dado que \\(y\\) y \\(x\\) son positivas en la mayor parte de las situaciones económicas, la elasticidad, \\(e_{y,x}\\) y la derivada parcial \\(\\partial y/\\partial x\\) tendrán el mismo signo.\nLa definción de la ecuación (3) deja en claro que se debe evaluar la elasticidad en un punto específico de una función. En general, podemos esperar que el valor de este parámetro varie acorde con distintos rangos de la función. Esta observación queda claramente demostrada en el caso donde \\(y\\) es función lineal de \\(x\\) en la formula\n\\[y = a + bx + otros\\hspace{0.1cm}terminos\\] En este caso\n\\[ e_{y,x} = \\frac{\\partial y}{\\partial x}\\cdot \\frac{x}{y} = b\\cdot \\frac{x}{y} = b\\cdot \\frac{x}{a + bx + . . . }\\]\nlo cual deja en claro que \\(e_{y,x}\\) no es constante. Por tanto, para funciones lineales es especialmente importante señalar el punto donde calcularemos la elasticidad.\nSi la relación de la función entre \\(x\\) y \\(y\\) es de forma exponencial\n\\[\ny = ax^b\n\\]\nentonces la elasticidad es una constante, independientemente del punto donde se mida:\n\\[\ne_{y,x} = \\frac{\\partial y}{\\partial x}\\cdot \\frac{x}{y} = abx^{b-1}\\cdot \\frac{x}{ax^b} = b\n\\]\nUna transformación logarítmica de esta ecuación también proporciona una definición alternativa de elasticidad muy cómoda. Dado que\n\\[\\ln y = \\ln a + b\\ln x\\]\ntendremos\n\\[e_{y,x} = b = \\frac{\\partial \\ln y}{\\partial \\ln x}\\]\nPor tanto, se podrán calcular las elasticidades por medio de la diferenciación logarítmica. Como se verá más adelante, esta forma de proceder con frecuencia es el mismo camino más fácil para hacer estos cálculos."
+  },
+  {
+    "objectID": "intro.html#derivada",
+    "href": "intro.html#derivada",
+    "title": "1  Maximización de una función con una variable",
+    "section": "1.1 Derivada",
+    "text": "1.1 Derivada\nLa derivada de una función \\(\\pi = f(q)\\) en el punto \\(q_1\\) se define como\n\\[\n\\frac{d\\pi}{dq} = \\frac{df}{dq} = \\lim_{h\\rightarrow 0}\\frac{f(q_1+h) - f(q_1)}{h}\n\\]\nObserve que el valor de este cociente depende claramente del punto \\(q_1\\) que se elija.\nEn la figura anterior:\n\\[\n\\left.\\begin{array}{c}\\frac{d\\pi}{dq} \\end{array}\\right|_{q = q_1} > 0\n\\]\nmientras que\n\\[\n\\left.\\begin{array}{c}\\frac{d\\pi}{dq} \\end{array}\\right|_{q = q_3} < 0\n\\]\n¿Cuál es el valor de \\(\\frac{d\\pi}{dq}\\) en \\(q^*\\) ? Debería ser igual a cero, porque los valores de \\(q\\) inferiores a \\(q^*\\) tienen un valor positivo y los valores superiores a \\(q^*\\) tienen un valor negativo. La derivada es la pendiente de la curva en cuestión; es decir, esta pendiente es positiva a la izquierda de \\(q^*\\) y negativa a la derecha de \\(q^*\\). En el punto \\(q^*\\), la pendiente de \\(f(q)\\) es 0."
+  },
+  {
+    "objectID": "intro.html#condición-de-primer-orden-para-el-máximo",
+    "href": "intro.html#condición-de-primer-orden-para-el-máximo",
+    "title": "1  Maximización de una función con una variable",
+    "section": "1.2 Condición de primer orden para el máximo",
+    "text": "1.2 Condición de primer orden para el máximo\nEste resultado es bastante general. Para que la función de una variable alcance su valor máximo en un punto, la derivada en ese punto (si existe) debe ser cero. En un punto óptimo (por decir \\(q^*\\)), se cumplirá que\n\\[\n\\left.\\begin{array}{c}\\frac{df}{dq} \\end{array}\\right|_{q = q^*} = 0\\hspace{2cm} (1)\n\\]\nSin embargo, la aplicación ingenua de esta única regla podría enganar. Por ejemplo, suponga que la función de ganancias tiene una de las formas que representa la figura de abajo a) o b)\n\nSi la función de ganancias es la que muestra la figura a), entonces al producir donde \\(\\frac{d\\pi}{dq} = 0\\), elegiría el punto \\(q_a^*\\). Este punto de hecho, le proporcionará un mínimo y no un máximo de ganancias. Por otra parte, si la función de ganancias es la opción b) que se muestra en la figura, entonces el administrador elegiría el punto \\(q_b^*\\) que, si bien le ofrece una ganancia superior a la de cualquier nivel de producción inferior a \\(q_b^*\\), sin duda es inferior a cualquier punto producción superior a \\(q_b^*\\). Estas situaciones indican el hecho matemático de que \\(\\frac{d\\pi}{dq} = 0\\) es una condición necesaria para alcanzar un máximo, pero no es una condición suficiente. Para asegurarnos de que el punto elegido es, en efecto, un punto máximo, es preciso imponer una segunda condición."
+  },
+  {
+    "objectID": "intro.html#derivada-de-segundo-orden",
+    "href": "intro.html#derivada-de-segundo-orden",
+    "title": "1  Maximización de una función con una variable",
+    "section": "1.3 Derivada de Segundo Orden",
+    "text": "1.3 Derivada de Segundo Orden\nSe dice que la derivada de una derivada es la segunda derivada o derivada de segundo orden y se escribe así:\n\\[\n\\frac{d^2\\pi}{dq^2}\\hspace{0.2cm}o\\hspace{0.2cm} \\frac{d^2f}{dq^2} \\hspace{0.2cm}o\\hspace{0.2cm} f^{\\prime\\prime}(q)\n\\]\nPor tanto, la condición adicional para que \\(q^*\\) represente un máximo (local) es\n\\[\n\\left.\\begin{array}{c}\\frac{d^2\\pi}{dq^2} \\end{array}\\right|_{q = q^*} = \\left.\\begin{array}{c}f^{\\prime\\prime}(q)\\end{array}\\right|_{q = q^*} < 0 \\hspace{2cm} (2)\n\\]\ndonde la notación nos recuerda, de nueva cuenta, que se debe calcular esta segunda derivada para el punto \\(q^*\\).\nCon base en lo anterior, aun cuando la ecuación (1) es una condición necesaria para alcanzar el máximo, se debe combinar con la ecuación (2) para asegurarnos de que el punto es un máximo local de la función. Por tanto, las ecuaciones (1) y (2) juntas son, condiciones suficientes para alcanzar este máximo."
+  },
+  {
+    "objectID": "funciones_univariantes.html#derivada",
+    "href": "funciones_univariantes.html#derivada",
+    "title": "1  Maximización de una función con una variable",
+    "section": "1.1 Derivada",
+    "text": "1.1 Derivada\nLa derivada de una función \\(\\pi = f(q)\\) en el punto \\(q_1\\) se define como\n\\[\n\\frac{d\\pi}{dq} = \\frac{df}{dq} = \\lim_{h\\rightarrow 0}\\frac{f(q_1+h) - f(q_1)}{h}\n\\]\nObserve que el valor de este cociente depende claramente del punto \\(q_1\\) que se elija.\nEn la figura anterior:\n\\[\n\\left.\\begin{array}{c}\\frac{d\\pi}{dq} \\end{array}\\right|_{q = q_1} > 0\n\\]\nmientras que\n\\[\n\\left.\\begin{array}{c}\\frac{d\\pi}{dq} \\end{array}\\right|_{q = q_3} < 0\n\\]\n¿Cuál es el valor de \\(\\frac{d\\pi}{dq}\\) en \\(q^*\\) ? Debería ser igual a cero, porque los valores de \\(q\\) inferiores a \\(q^*\\) tienen un valor positivo y los valores superiores a \\(q^*\\) tienen un valor negativo. La derivada es la pendiente de la curva en cuestión; es decir, esta pendiente es positiva a la izquierda de \\(q^*\\) y negativa a la derecha de \\(q^*\\). En el punto \\(q^*\\), la pendiente de \\(f(q)\\) es 0."
+  },
+  {
+    "objectID": "funciones_univariantes.html#condición-de-primer-orden-para-el-máximo",
+    "href": "funciones_univariantes.html#condición-de-primer-orden-para-el-máximo",
+    "title": "1  Maximización de una función con una variable",
+    "section": "1.2 Condición de primer orden para el máximo",
+    "text": "1.2 Condición de primer orden para el máximo\nEste resultado es bastante general. Para que la función de una variable alcance su valor máximo en un punto, la derivada en ese punto (si existe) debe ser cero. En un punto óptimo (por decir \\(q^*\\)), se cumplirá que\n\\[\n\\left.\\begin{array}{c}\\frac{df}{dq} \\end{array}\\right|_{q = q^*} = 0\\hspace{2cm} (1)\n\\]\nSin embargo, la aplicación ingenua de esta única regla podría enganar. Por ejemplo, suponga que la función de ganancias tiene una de las formas que representa la figura de abajo a) o b)\n\nSi la función de ganancias es la que muestra la figura a), entonces al producir donde \\(\\frac{d\\pi}{dq} = 0\\), elegiría el punto \\(q_a^*\\). Este punto de hecho, le proporcionará un mínimo y no un máximo de ganancias. Por otra parte, si la función de ganancias es la opción b) que se muestra en la figura, entonces el administrador elegiría el punto \\(q_b^*\\) que, si bien le ofrece una ganancia superior a la de cualquier nivel de producción inferior a \\(q_b^*\\), sin duda es inferior a cualquier punto producción superior a \\(q_b^*\\). Estas situaciones indican el hecho matemático de que \\(\\frac{d\\pi}{dq} = 0\\) es una condición necesaria para alcanzar un máximo, pero no es una condición suficiente. Para asegurarnos de que el punto elegido es, en efecto, un punto máximo, es preciso imponer una segunda condición."
+  },
+  {
+    "objectID": "funciones_univariantes.html#derivada-de-segundo-orden",
+    "href": "funciones_univariantes.html#derivada-de-segundo-orden",
+    "title": "1  Maximización de una función con una variable",
+    "section": "1.3 Derivada de Segundo Orden",
+    "text": "1.3 Derivada de Segundo Orden\nSe dice que la derivada de una derivada es la segunda derivada o derivada de segundo orden y se escribe así:\n\\[\n\\frac{d^2\\pi}{dq^2}\\hspace{0.2cm}o\\hspace{0.2cm} \\frac{d^2f}{dq^2} \\hspace{0.2cm}o\\hspace{0.2cm} f^{\\prime\\prime}(q)\n\\]\nPor tanto, la condición adicional para que \\(q^*\\) represente un máximo (local) es\n\\[\n\\left.\\begin{array}{c}\\frac{d^2\\pi}{dq^2} \\end{array}\\right|_{q = q^*} = \\left.\\begin{array}{c}f^{\\prime\\prime}(q)\\end{array}\\right|_{q = q^*} < 0 \\hspace{2cm} (2)\n\\]\ndonde la notación nos recuerda, de nueva cuenta, que se debe calcular esta segunda derivada para el punto \\(q^*\\).\nCon base en lo anterior, aun cuando la ecuación (1) es una condición necesaria para alcanzar el máximo, se debe combinar con la ecuación (2) para asegurarnos de que el punto es un máximo local de la función. Por tanto, las ecuaciones (1) y (2) juntas son, condiciones suficientes para alcanzar este máximo."
+  },
+  {
+    "objectID": "summary.html#derivadas-parciales",
+    "href": "summary.html#derivadas-parciales",
+    "title": "2  Funciones con varias variables",
+    "section": "2.1 Derivadas Parciales",
+    "text": "2.1 Derivadas Parciales\nNos interesa calcular el punto en el cual \\(y\\) alcanza su valor máximo, así como los intercambios que se deben hacer para alcanzar ese punto. De nuevo, resultaría más fácil pensar que el agente cambia las variables que están a su disposición (las \\(x\\)) para poder encontrar un máximo. Por desgracia, con una función de varias variables, la idea de la derivada no está bien definida. Tal como la pendiente de ascensión a una montaña dependerá de la dirección que se lleve, la pendiente (o la derivada) de una función dependerá de la dirección que se elija. Por lo general, las únicas pendientes direccionales de interés son las que se obtienen aumentando una de las \\(x\\) mientras que todas las demás variables permanecen constantes (en la analogía de la montaña podrían medirse las pendientes sólo en dirección norte-sur o este-oeste). Estas pendientes direccionales se denominan derivadas parciales la derivada parcial de y respecto a \\(x_1\\) se escribe como,\n\\[\n\\frac{\\partial y}{\\partial x_1}\\hspace{0.2cm}o\\hspace{0.2cm}\\frac{\\partial f}{\\partial x_1} \\hspace{0.2cm}o\\hspace{0.2cm} f_{x_1} \\hspace{0.2cm}o\\hspace{0.2cm} f_1\n\\]\nQueda entendido que al calcular esta derivada se mantiene constante el valor de todas las demás \\(x\\). De nuevo, es preciso destacar que el valor numérico de esta pendiente depende del valor que tome \\(x_1\\) y el valor (predeterminado) de \\(x_2, . . . , x_n\\).\nUna definición algo más formal de la derivada parcial es\n\\[\n\\left.\\begin{array}{c}\\frac{\\partial f}{\\partial x_1} \\end{array}\\right|_{\\overline{x}_2, . . . , \\overline{x}_n} = \\lim_{h\\rightarrow 0} \\frac{f(x_1 + h,\\overline{x}_2, . . . , \\overline{x}_n ) - f(x_1,\\overline{x}_2, . . . , \\overline{x}_n)}{h}\n\\] donde la notación indica que \\(x_2, . . . , x_n\\) se mantienen constantes en los valores predeterminados \\(\\overline{x}_2, . . . , \\overline{x}_n\\) de forma que podamos estudiar únicamente el efecto del cambio de \\(x_1\\).\n\n2.1.1 Ejemplo\nSi \\(f(x_1,x_2) = ax_1^2 + bx_1x_2 + cx_2^2\\) entonces\n\\[\n\\begin{eqnarray}\n\\frac{\\partial f}{\\partial x_1} &=& f_1 = 2ax_1 + bx_2\\\\[0.2cm]\n\\frac{\\partial f}{\\partial x_2} &=& f_2 = bx_1 + 2cx_2\n\\end{eqnarray}\n\\]\nNótese que, en general \\(\\partial f/\\partial x_1\\) es función de \\(x_1\\) como de \\(x_2\\) y, por tanto, su valor dependerá de los valores particulares que se asignen a estas variables. Asimismo dependerá de los parámetros \\(a,b\\) y \\(c\\), los cuales no cambian a medida que \\(x_1\\) y \\(x_2\\) cambian."
+  },
+  {
+    "objectID": "d_total.html",
+    "href": "d_total.html",
+    "title": "3  Diferenciación Total",
+    "section": "",
+    "text": "Si se varían todas las \\(x\\) en una cantidad pequeña, el efecto total en \\(y\\) será la suma de todos los efectos, tal y como se ha demostrado antes. Por tanto, la variación total de \\(y\\) se define como\n\\[\n\\begin{eqnarray}\ndy &=& \\frac{\\partial f}{\\partial x_1}dx_1 + \\frac{\\partial f}{\\partial x_2}dx_2 + . . . + \\frac{\\partial f}{\\partial x_n}dx_n\\\\[0.2cm]\n&=& f_1dx_1 + f_2dx_2 + . . . + f_ndx_n\n\\end{eqnarray}\n\\]\nEsta expresión se denomina diferenciación total de \\(f\\) y es directamente análoga a la expresión del caso de una sola variable. La intuición indica que la ecuación es razonable: la variación total de \\(y\\) es la suma de las variaciones provocadas por la variación de cada una de las \\(x\\)."
+  },
+  {
+    "objectID": "d_total.html#condición-de-primer-orden-para-un-máximo",
+    "href": "d_total.html#condición-de-primer-orden-para-un-máximo",
+    "title": "3  Diferenciación Total",
+    "section": "3.1 Condición de primer orden para un máximo",
+    "text": "3.1 Condición de primer orden para un máximo\nUna condición necesaria para un máximo (o un mínimo) de una función \\(f(x_1,x_2, . . . , x_n)\\) es que \\(dy = 0\\) para una combinación de pequeñas variaciones de las \\(x\\). Esto sólo puede ocurrir si, en el punto considerado\n\\[\nf_1 = f_2 = . . . = f_n = 0\n\\]\nEl punto en el que es válida la ecuación anterior se llama punto crítico. Esta ecuación es la condición necesaria para obtener un máximo local."
+  },
+  {
+    "objectID": "d_total.html#calculo-del-máximo",
+    "href": "d_total.html#calculo-del-máximo",
+    "title": "3  Diferenciación Total",
+    "section": "3.2 Calculo del máximo",
+    "text": "3.2 Calculo del máximo\nSuponga que \\(y\\) es una función de \\(x_1\\) y \\(x_2\\) determinada por\n\\[\ny = -(x_1 - 1)^2 - (x_2 - 2)^2 + 10\n\\]\no\n\\[\ny = -x_1^2 + 2x_1 - x_2^2 + 4x_2 + 5\n\\]\nPor ejemplo, \\(y\\) podría representar la salud de un individuo (medida en una escala del 0 al 10 ) y \\(x_1\\) y \\(x_2\\) serían las dosis diarias de dos medicamentos para mejorar su salud. Se quiere calcular los valores de \\(x_1\\) y \\(x_2\\) que hacen que \\(y\\) tenga el mayor valor posible. Partiendo de las derivadas parciales de \\(y\\) respecto a \\(x_1\\) y \\(x_2\\) y aplicando las condiciones necesarias dadas, se obtiene:\n\\[\n\\begin{eqnarray}\n\\frac{\\partial y}{\\partial x_1} &=& -2x_1 + 2 = 0\\\\[0.2cm]\n\\frac{\\partial y}{\\partial x_2} &=& -2x_2 + 4 = 0\n\\end{eqnarray}\n\\]\ny resolviendo, obtenemos\n\\[\nx_1^* = 1,\\hspace{1cm}x_2^* = 2\n\\]\nPor tanto, la función está en el punto crítico cuando \\(x_1 = 1\\), \\(x_2 = 2\\). En este punto, \\(y = 10\\) es el mejor estado de salud posible."
+  }
+]

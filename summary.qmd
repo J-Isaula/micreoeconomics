@@ -1,0 +1,42 @@
+# Funciones con varias variables 
+
+Los problemas económicos no suelen implicar funciones de una sola variable. La mayor parte de
+las metas que interesan a los agentes económicos dependen de varias variables y ellos deben elegir de entre éstas. Por ejemplo, la *utilidad* que obtiene un individuo de sus actividades como consumidor dependerá de la cantidad que consuma de cada bien. En el caso de la función de *producción* de una empresa, la cantidad producida dependerá de la cantidad de trabajo, capital y tierra dedicados a la producción. En estas circunstancias, el hecho de que esta variable $(y)$ depende de una serie de otras variables $(x_1,x_2, . . . , x_n)$ se escribe
+
+$$
+y = f(x_1,x_2, . . . , x_n)
+$$
+
+## Derivadas Parciales 
+
+Nos interesa calcular el punto en el cual $y$ alcanza su valor máximo, así como los intercambios
+que se deben hacer para alcanzar ese punto. De nuevo, resultaría más fácil pensar que el agente
+cambia las variables que están a su disposición (las $x$) para poder encontrar un máximo. Por desgracia, con una función de varias variables, la idea de la derivada no está bien definida. Tal como la pendiente de ascensión a una montaña dependerá de la dirección que se lleve, la pendiente (o la derivada) de una función dependerá de la dirección que se elija. Por lo general, las únicas pendientes direccionales de interés son las que se obtienen aumentando una de las $x$ mientras que todas las demás variables permanecen constantes (en la analogía de la montaña podrían medirse las pendientes sólo en dirección norte-sur o este-oeste). Estas pendientes direccionales se denominan *derivadas parciales* la derivada parcial de *y* respecto a $x_1$ se escribe como,
+
+$$
+\frac{\partial y}{\partial x_1}\hspace{0.2cm}o\hspace{0.2cm}\frac{\partial f}{\partial x_1} \hspace{0.2cm}o\hspace{0.2cm} f_{x_1} \hspace{0.2cm}o\hspace{0.2cm} f_1
+$$
+
+Queda entendido que al calcular esta derivada se mantiene constante el valor de todas las demás
+$x$. De nuevo, es preciso destacar que el valor numérico de esta pendiente depende del valor que
+tome $x_1$ y el valor (predeterminado) de $x_2, . . . , x_n$.
+
+Una definición algo más formal de la derivada parcial es
+
+$$
+\left.\begin{array}{c}\frac{\partial f}{\partial x_1} \end{array}\right|_{\overline{x}_2, . . . , \overline{x}_n} = \lim_{h\rightarrow 0} \frac{f(x_1 + h,\overline{x}_2, . . . , \overline{x}_n ) - f(x_1,\overline{x}_2, . . . , \overline{x}_n)}{h}
+$$
+donde la notación indica que $x_2, . . . , x_n$ se mantienen constantes en los valores predeterminados $\overline{x}_2, . . . , \overline{x}_n$ de forma que podamos estudiar únicamente el efecto del cambio de $x_1$.
+
+### Ejemplo 
+
+Si $f(x_1,x_2) = ax_1^2 + bx_1x_2 + cx_2^2$ entonces
+
+$$
+\begin{eqnarray}
+\frac{\partial f}{\partial x_1} &=& f_1 = 2ax_1 + bx_2\\[0.2cm]
+\frac{\partial f}{\partial x_2} &=& f_2 = bx_1 + 2cx_2
+\end{eqnarray}
+$$
+
+Nótese que, en general $\partial f/\partial x_1$ es función de $x_1$ como de $x_2$ y, por tanto, su valor dependerá de los valores particulares que se asignen a estas variables. Asimismo dependerá de los parámetros $a,b$ y $c$, los cuales no cambian a medida que $x_1$ y $x_2$ cambian.

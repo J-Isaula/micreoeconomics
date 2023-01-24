@@ -1,0 +1,40 @@
+# Elasticidad: definición general {.unnumbered}
+
+Los economistas utilizan las elasticidades para resumir casi todos los efectos cuantitativos que les interesan. Dado que estas medidas se concentran en el efecto proporcional que el cambio de una variable tiene en otra, éstas no están sujetas a unidades; es decir, las unidades "se cancelan" cuando se calcula la elasticidad. Por ejemplo, suponga que $y$ es función de $x$ y, posiblemente, de otras variables. Por tanto, la elasticidad de $y$ con relación a $x$ (denotada como $e_{y,x}$) se define como
+
+$$
+e_{y,x} = \frac{\frac{\triangle y}{y}}{\frac{\triangle x}{x}} = \frac{\triangle y}{\triangle x}\cdot \frac{x}{y} = \frac{\partial y}{\partial x}\cdot \frac{x}{y}\hspace{2cm} (3)
+$$
+Nótese que, independientemente de cómo se midan $y$ y $x$ las unidades de medida se cancelan, porque aparecen tanto en un numerador como en un denominador. Notese también que, dado que $y$ y $x$ son positivas en la mayor parte de las situaciones económicas, la elasticidad, $e_{y,x}$ y la derivada parcial $\partial y/\partial x$ tendrán el mismo signo.
+
+
+La definción de la ecuación (3) deja en claro que se debe evaluar la elasticidad en un punto específico de una función. En general, podemos esperar que el valor de este parámetro varie acorde con distintos rangos de la función. Esta observación queda claramente demostrada en el caso donde $y$ es función lineal de $x$ en la formula
+
+$$y = a + bx + otros\hspace{0.1cm}terminos$$
+En este caso
+
+$$ e_{y,x} = \frac{\partial y}{\partial x}\cdot \frac{x}{y} = b\cdot \frac{x}{y} = b\cdot \frac{x}{a + bx + . . . }$$
+
+lo cual deja en claro que $e_{y,x}$ no es constante. Por tanto, para funciones lineales es especialmente importante señalar el punto donde calcularemos la elasticidad.
+
+Si la relación de la función entre $x$ y $y$ es de forma exponencial
+
+$$
+y = ax^b
+$$
+
+entonces la elasticidad es una constante, independientemente del punto donde se mida:
+
+$$
+e_{y,x} = \frac{\partial y}{\partial x}\cdot \frac{x}{y} = abx^{b-1}\cdot \frac{x}{ax^b} = b
+$$
+
+Una transformación logarítmica de esta ecuación también proporciona una definición alternativa de elasticidad muy cómoda. Dado que
+
+$$\ln y = \ln a + b\ln x$$
+
+tendremos
+
+$$e_{y,x} = b = \frac{\partial \ln y}{\partial \ln x}$$
+
+Por tanto, se podrán calcular las elasticidades por medio de la *diferenciación logarítmica*. Como se verá más adelante, esta forma de proceder con frecuencia es el mismo camino más fácil para hacer estos cálculos.

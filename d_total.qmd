@@ -1,0 +1,53 @@
+# Diferenciación Total 
+
+Si se varían todas las $x$ en una cantidad pequeña, el efecto total en $y$ será la suma de todos los efectos, tal y como se ha demostrado antes. Por tanto, la variación total de $y$ se define como
+
+$$
+\begin{eqnarray}
+dy &=& \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + . . . + \frac{\partial f}{\partial x_n}dx_n\\[0.2cm]
+ &=& f_1dx_1 + f_2dx_2 + . . . + f_ndx_n
+\end{eqnarray}
+$$
+
+Esta expresión se denomina *diferenciación total* de $f$ y es directamente análoga a la expresión del caso de una sola variable. La intuición indica que la ecuación es razonable: la variación total de $y$ es la suma de las variaciones provocadas por la variación de cada una de las $x$.
+
+## Condición de primer orden para un máximo 
+
+Una condición necesaria para un máximo (o un mínimo) de una función $f(x_1,x_2, . . . , x_n)$ es que $dy = 0$ para una combinación de pequeñas variaciones de las $x$. Esto sólo puede ocurrir si, en el punto considerado
+
+$$
+f_1 = f_2 = . . . = f_n = 0
+$$
+
+El punto en el que es válida la ecuación anterior se llama *punto crítico*. Esta ecuación es la condición necesaria para obtener un máximo local.
+
+## Calculo del máximo 
+
+Suponga que $y$ es una función de $x_1$ y $x_2$ determinada por
+
+$$
+y = -(x_1 - 1)^2 - (x_2 - 2)^2 + 10
+$$
+
+o
+
+$$
+y = -x_1^2 + 2x_1 - x_2^2 + 4x_2 + 5
+$$
+
+Por ejemplo, $y$ podría representar la salud de un individuo (medida en una escala del 0 al 10 ) y $x_1$ y $x_2$ serían las dosis diarias de dos medicamentos para mejorar su salud. Se quiere calcular los valores de $x_1$ y $x_2$ que hacen que $y$ tenga el mayor valor posible. Partiendo de las derivadas parciales de $y$ respecto a $x_1$ y $x_2$ y aplicando las condiciones necesarias dadas, se obtiene:
+
+$$
+\begin{eqnarray}
+\frac{\partial y}{\partial x_1} &=& -2x_1 + 2 = 0\\[0.2cm]
+\frac{\partial y}{\partial x_2} &=& -2x_2 + 4 = 0 
+\end{eqnarray}
+$$
+
+y resolviendo, obtenemos
+
+$$
+x_1^* = 1,\hspace{1cm}x_2^* = 2
+$$
+
+Por tanto, la función está en el punto crítico cuando $x_1 = 1$, $x_2 = 2$. En este punto, $y = 10$ es el mejor estado de salud posible.

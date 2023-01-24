@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Microeconomía - 1&nbsp; Maximización de una función con una variable</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Maximización de una función con una variable</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Microeconomía</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Maximización de una función con una variable</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#derivada" id="toc-derivada" class="nav-link active" data-scroll-target="#derivada"><span class="toc-section-number">1.1</span>  Derivada</a></li>
+  <li><a href="#condición-de-primer-orden-para-el-máximo" id="toc-condición-de-primer-orden-para-el-máximo" class="nav-link" data-scroll-target="#condición-de-primer-orden-para-el-máximo"><span class="toc-section-number">1.2</span>  Condición de primer orden para el máximo</a></li>
+  <li><a href="#derivada-de-segundo-orden" id="toc-derivada-de-segundo-orden" class="nav-link" data-scroll-target="#derivada-de-segundo-orden"><span class="toc-section-number">1.3</span>  Derivada de Segundo Orden</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Maximización de una función con una variable</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Comencemos con un ejemplo sencillo. Suponga que el administrador de un empresa quiere maximizar las ganancias que obtendrá de la venta de un bien determinado. Llamemos a estas ganancias <span class="math inline">\((\pi)\)</span> que dependeran de la cantidad <span class="math inline">\((q)\)</span> que venden de ese bien. Matemáticamente, esto es <span class="math display">\[\pi = f(q)\]</span></p>
+<p>La siguiente figura muestra una posible relación entre <span class="math inline">\(\pi\)</span> y <span class="math inline">\(q\)</span>. Es evidente que para obtener la ganancia máxima, el administrador debe producir <span class="math inline">\(q^*\)</span>, con lo cual obtendrá <span class="math inline">\(\pi^*\)</span> ganancias.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="im1.PNG" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Si un administrador quiere alcanzar el nivel de producción que maximiza las ganancias, tendría que producir q*. Notese que en q*, <span class="math inline">\(\frac{d \pi}{dq} = 0\)</span>.</figcaption><p></p>
+</figure>
+</div>
+<section id="derivada" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="derivada"><span class="header-section-number">1.1</span> Derivada</h2>
+<p>La derivada de una función <span class="math inline">\(\pi = f(q)\)</span> en el punto <span class="math inline">\(q_1\)</span> se define como</p>
+<p><span class="math display">\[
+\frac{d\pi}{dq} = \frac{df}{dq} = \lim_{h\rightarrow 0}\frac{f(q_1+h) - f(q_1)}{h}
+\]</span></p>
+<p>Observe que el valor de este cociente depende claramente del punto <span class="math inline">\(q_1\)</span> que se elija.</p>
+<p>En la figura anterior:</p>
+<p><span class="math display">\[
+\left.\begin{array}{c}\frac{d\pi}{dq} \end{array}\right|_{q = q_1} &gt; 0
+\]</span></p>
+<p>mientras que</p>
+<p><span class="math display">\[
+\left.\begin{array}{c}\frac{d\pi}{dq} \end{array}\right|_{q = q_3} &lt; 0
+\]</span></p>
+<p>¿Cuál es el valor de <span class="math inline">\(\frac{d\pi}{dq}\)</span> en <span class="math inline">\(q^*\)</span> ? Debería ser igual a cero, porque los valores de <span class="math inline">\(q\)</span> inferiores a <span class="math inline">\(q^*\)</span> tienen un valor positivo y los valores superiores a <span class="math inline">\(q^*\)</span> tienen un valor negativo. <strong>La derivada es la pendiente de la curva en cuestión</strong>; es decir, esta pendiente es positiva a la izquierda de <span class="math inline">\(q^*\)</span> y negativa a la derecha de <span class="math inline">\(q^*\)</span>. En el punto <span class="math inline">\(q^*\)</span>, la pendiente de <span class="math inline">\(f(q)\)</span> es 0.</p>
+</section>
+<section id="condición-de-primer-orden-para-el-máximo" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="condición-de-primer-orden-para-el-máximo"><span class="header-section-number">1.2</span> Condición de primer orden para el máximo</h2>
+<p>Este resultado es bastante general. Para que la función de una variable alcance su valor máximo en un punto, la derivada en ese punto (si existe) debe ser cero. En un punto óptimo (por decir <span class="math inline">\(q^*\)</span>), se cumplirá que</p>
+<p><span class="math display">\[
+\left.\begin{array}{c}\frac{df}{dq} \end{array}\right|_{q = q^*} = 0\hspace{2cm} (1)
+\]</span></p>
+<p>Sin embargo, la aplicación ingenua de esta única regla podría enganar. Por ejemplo, suponga que la función de ganancias tiene una de las formas que representa la figura de abajo a) o b)</p>
+<p><img src="im2.PNG" class="img-fluid"></p>
+<p>Si la función de ganancias es la que muestra la figura a), entonces al producir donde <span class="math inline">\(\frac{d\pi}{dq} = 0\)</span>, elegiría el punto <span class="math inline">\(q_a^*\)</span>. Este punto de hecho, le proporcionará un mínimo y no un máximo de ganancias. Por otra parte, si la función de ganancias es la opción b) que se muestra en la figura, entonces el administrador elegiría el punto <span class="math inline">\(q_b^*\)</span> que, si bien le ofrece una ganancia superior a la de cualquier nivel de producción inferior a <span class="math inline">\(q_b^*\)</span>, sin duda es inferior a cualquier punto producción superior a <span class="math inline">\(q_b^*\)</span>. Estas situaciones indican el hecho matemático de que <span class="math inline">\(\frac{d\pi}{dq} = 0\)</span> es una condición necesaria para alcanzar un máximo, pero no es una condición suficiente. Para asegurarnos de que el punto elegido es, en efecto, un punto máximo, es preciso imponer una segunda condición.</p>
+</section>
+<section id="derivada-de-segundo-orden" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="derivada-de-segundo-orden"><span class="header-section-number">1.3</span> Derivada de Segundo Orden</h2>
+<p>Se dice que la derivada de una derivada es la segunda derivada o derivada de segundo orden y se escribe así:</p>
+<p><span class="math display">\[
+\frac{d^2\pi}{dq^2}\hspace{0.2cm}o\hspace{0.2cm} \frac{d^2f}{dq^2} \hspace{0.2cm}o\hspace{0.2cm} f^{\prime\prime}(q)
+\]</span></p>
+<p>Por tanto, la condición adicional para que <span class="math inline">\(q^*\)</span> represente un máximo (local) es</p>
+<p><span class="math display">\[
+\left.\begin{array}{c}\frac{d^2\pi}{dq^2} \end{array}\right|_{q = q^*} = \left.\begin{array}{c}f^{\prime\prime}(q)\end{array}\right|_{q = q^*} &lt; 0 \hspace{2cm} (2)
+\]</span></p>
+<p>donde la notación nos recuerda, de nueva cuenta, que se debe calcular esta segunda derivada para el punto <span class="math inline">\(q^*\)</span>.</p>
+<p>Con base en lo anterior, aun cuando la ecuación (1) es una condición necesaria para alcanzar el máximo, se debe combinar con la ecuación (2) para asegurarnos de que el punto es un máximo local de la función. Por tanto, las ecuaciones (1) y (2) juntas son, condiciones suficientes para alcanzar este máximo.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
