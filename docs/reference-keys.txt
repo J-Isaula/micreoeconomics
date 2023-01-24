@@ -1,1 +1,6 @@
 maximización-de-una-función-con-una-variable.
+condición-de-primer-orden-para-el-máximo.
+segundas-derivadas
+funciones-con-varias-variables
+derivadas-parciales
+derivada
