@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juan Isaula">
 
-<title>Microeconomía</title>
+<title>Microeconomía - 4&nbsp; Maximización con Restricciones</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./d_total.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,6 +60,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Microeconomía</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maximización con Restricciones</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -95,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Welcome</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./M_lagrange.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maximización con Restricciones</span></a>
+  <a href="./M_lagrange.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maximización con Restricciones</span></a>
   </div>
 </li>
     </ul>
@@ -132,7 +132,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#método-del-multiplicador-lagrangiano" id="toc-método-del-multiplicador-lagrangiano" class="nav-link active" data-scroll-target="#método-del-multiplicador-lagrangiano"><span class="toc-section-number">4.1</span>  Método del Multiplicador Lagrangiano</a></li>
+  <li><a href="#el-problema-formal" id="toc-el-problema-formal" class="nav-link" data-scroll-target="#el-problema-formal"><span class="toc-section-number">4.2</span>  El Problema Formal</a></li>
+  <li><a href="#condiciones-de-primer-orden" id="toc-condiciones-de-primer-orden" class="nav-link" data-scroll-target="#condiciones-de-primer-orden"><span class="toc-section-number">4.3</span>  Condiciones de Primer Orden</a>
+  <ul class="collapse">
+  <li><a href="#interpretación-del-multiplicador-lagrangiano" id="toc-interpretación-del-multiplicador-lagrangiano" class="nav-link" data-scroll-target="#interpretación-del-multiplicador-lagrangiano"><span class="toc-section-number">4.3.1</span>  Interpretación del Multiplicador Lagrangiano</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -141,26 +146,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Microeconomía</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maximización con Restricciones</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Juan Isaula </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
   
     
   </div>
@@ -168,12 +161,58 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>Bienvenidos al curso de Microeconomía II, en este sitio web trataremos de recordar y fundamentar la temática sobre las <em>matemáticas de la optimización</em>, tema fundamental para la comprensión de la asignatura. Aquí preparo un resumen del libro de Nicholson capítulo 2, si desea profundizar más al respecto, sugiero revise el capítulo completo ingresando al siguiente <a href="https://elvisjgblog.files.wordpress.com/2019/04/teorc3ada-microeconc3b3mica-9c2b0-edicic3b3n-walter-nicholson.pdf">link.</a></p>
-<p>Muchos de los modelos económicos parten del supuesto que un agente quiere determinar el valor óptimo de una función. En el caso de los consumidores, esa función mide la utilidad que estos obtienen de sus compras y, en el de las empresas, mide las ganancias de éstas. Sin embargo, en ambos casos, las cuestiones matemáticas formales de la solución son muy similares. En este material se analizarán las matemáticas que son comunes a todo este tipo de problemas. Para aquellos que esten familiarizados con el cálculo multivariante, este material servira de repaso. Para aquellos que sólo estén familiarizados con algunos conceptos del cálculo básico, este material les proporcionará las bases necesarias para comenzar a analizar el cálculo aplicado a la construcción de modelos microeconómicos.</p>
+<p>Hasta ahora nos hemos centrado en determinar el valor máximo de una función sin restringir la posibilidad de elegir entre las <span class="math inline">\(x\)</span> disponibles. Sin embargo, en la mayor parte de los problemas económicos, no todos los valores de las <span class="math inline">\(x\)</span> son factibles. Por ejemplo, en muchas situaciones es necesario que todas las <span class="math inline">\(x\)</span> sean positivas. Este requisito se presentaría en el caso del problema que afronta el administrador que elige el nivel de producción que maximiza las ganancias, o sea que una producción negativa no tendría sentido. Dado que no podemos elegir libremente entre todas las <span class="math inline">\(x\)</span>, y tal vez no sea tan grande como podría ser. Así, diríamos que las restricciones son inactivas si se puede obtener el mismo nivel de <span class="math inline">\(y\)</span> indepedientemente de que se imponga o no la restricción.</p>
+<section id="método-del-multiplicador-lagrangiano" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="método-del-multiplicador-lagrangiano"><span class="header-section-number">4.1</span> Método del Multiplicador Lagrangiano</h2>
+<p>Un método para resolver los problemas de maximización con restricciones es el <em>método del multiplicador lagrangiano,</em> el cual entraña un inteligente truco matemático que también tiene una interpretación económica muy útil. La lógica de este método es bastante sencilla, pero aquí no se pretende hacer una presentación rigurosa. La técnica lagrangiana introduce una variable adicional (el multiplicador lagrangiano), el cual no sólo ayuda a resolver el problema en cuestión (puesto que ahora hay <span class="math inline">\(n+1\)</span> ecuaciones en <span class="math inline">\(n+1\)</span> incógnitas), sino que también tiene una interpretación útil en diversas circustancias económicas.</p>
+</section>
+<section id="el-problema-formal" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="el-problema-formal"><span class="header-section-number">4.2</span> El Problema Formal</h2>
+<p>Mas concretamente, suponga que desea calcular los valores de <span class="math inline">\(x_1,x_2, . . . , x_n\)</span> que maximizan</p>
+<p><span class="math display">\[
+y = f(x_1,x_2, . . . , x_n)
+\]</span></p>
+<p>sujeto a una restrición que sólo permite utilizar ciertos valores de las <span class="math inline">\(x\)</span>. Una forma general de escribir esa restricción es</p>
+<p><span class="math display">\[
+g(x_1,x_2, . . . , x_n) = 0
+\]</span></p>
+<p>donde la función <span class="math inline">\(g\)</span> representa la relación que se debe cumplir en todas las <span class="math inline">\(x\)</span>.</p>
+</section>
+<section id="condiciones-de-primer-orden" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="condiciones-de-primer-orden"><span class="header-section-number">4.3</span> Condiciones de Primer Orden</h2>
+<p>El método del multiplicador lagrangiano parte de la formulación de la expresión</p>
+<p><span class="math display">\[
+L = f(x_1,x_2, . . . , x_n) + \lambda g(x_1,x_2, . . . , x_n)\hspace{1cm} (4)\]</span></p>
+<p>donde <span class="math inline">\(\lambda\)</span> es una variable adiconal llamada multiplicador lagrangiano. consideraremos a <span class="math inline">\(\lambda\)</span> también una variable (además de las <span class="math inline">\(x\)</span>). A partir de la ecuación (4) las condiciones para alcanzar un punto critico son</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+\frac{\partial L}{\partial x_1} &amp;=&amp; f_1 + \lambda g_1 = 0\\[0.2cm]
+\frac{\partial L}{\partial x_2} &amp;=&amp; f_2 + \lambda g_2 = 0\\[0.2cm]
+&amp;\vdots&amp;\\[0.2cm]
+\frac{\partial L}{\partial x_n} &amp;=&amp; f_n + \lambda g_n = 0\\[0.2cm]
+\frac{\partial L}{\partial \lambda} &amp;=&amp; g(x_1, x_2, . . . , x_n) = 0
+\end{eqnarray}
+\]</span></p>
+<p>Así, las ecuaciones previas son las condiciones para obtener un punto crítico de la función <span class="math inline">\(L\)</span>. Notese que hay <span class="math inline">\(n+1\)</span> ecuaciones (una para cada <span class="math inline">\(x\)</span> y otra más para <span class="math inline">\(\lambda\)</span>) en <span class="math inline">\(n+1\)</span> incógnitas. En general, es posible resolver las ecuaciones para <span class="math inline">\(x_1,x_2, . . . , x_n\)</span>, y para <span class="math inline">\(\lambda\)</span>.</p>
+<section id="interpretación-del-multiplicador-lagrangiano" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="interpretación-del-multiplicador-lagrangiano"><span class="header-section-number">4.3.1</span> Interpretación del Multiplicador Lagrangiano</h3>
+<p>Hasta aquí se ha utilizado el multiplicador lagrangiano <span class="math inline">\((\lambda)\)</span> únicamente como un “truco” matemático para llegar a la solución que se quería. De hecho, esta variable también tiene una importante interpretación económica, la cual será fundamental para nuestro análisis. Para desarrollar esta interpretación, es necesario volver a escribir las primeras <span class="math inline">\(n\)</span> ecuaciones como</p>
+<p><span class="math display">\[
+\frac{f_1}{-g_1} = \frac{f_2}{-g_2} = . . . = \frac{f_n}{-g_n} = \lambda \hspace{2cm} (5)
+\]</span></p>
+<p>En otras palabras, en el punto, máximo, la proporción de <span class="math inline">\(f_i\)</span> respecto a <span class="math inline">\(g_i\)</span> es la misma para todas las <span class="math inline">\(x_i\)</span>. Los numeradores de las ecuaciones previas son las contribuciones marginales de cada <span class="math inline">\(x_i\)</span> obtendrá en la función que se está maximizando (es decir <span class="math inline">\(f\)</span>).</p>
+<p>Utilizando terminología actual, podría escribirse esta restricción de forma implícita como</p>
+<p><span class="math display">\[
+g(x_1, x_2) = F - p_1x_1 - p_2x_2 = 0
+\]</span></p>
+<p>En esta situación, se tendría</p>
+<p><span class="math display">\[
+-g_i = p_i
+\]</span></p>
+<p>y la derivada <span class="math inline">\(-g_i\)</span> refleja, en efecto, el costo marginal por unidad derivado de utilizar <span class="math inline">\(x_i\)</span>. Prácticamente todos los problemas de optimización que se encontrarán en capítulos posteriores hacen una interpretación similar de los denominadores de la ecuaciones (5).</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -312,11 +351,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./d_total.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diferenciación Total</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Maximización de una función con una variable</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -12,6 +12,7 @@ book:
     - summary.qmd
     - references.qmd
     - d_total.qmd
+    - M_lagrange.qmd
 
 bibliography: references.bib
 

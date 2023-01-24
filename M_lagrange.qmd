@@ -1,0 +1,68 @@
+# Maximización con Restricciones
+
+Hasta ahora nos hemos centrado en determinar el valor máximo de una función sin restringir la posibilidad de elegir entre las $x$ disponibles. Sin embargo, en la mayor parte de los problemas económicos, no todos los valores de las $x$ son factibles. Por ejemplo, en muchas situaciones es necesario que todas las $x$ sean positivas. Este requisito se presentaría en el caso del problema que afronta el administrador que elige el nivel de producción que maximiza las ganancias, o sea que una producción negativa no tendría sentido. Dado que no podemos elegir libremente entre todas las $x$, y tal vez no sea tan grande como podría ser. Así, diríamos que las restricciones son inactivas si se puede obtener el mismo nivel de $y$ indepedientemente de que se imponga o no la restricción.
+
+## Método del Multiplicador Lagrangiano
+
+Un método para resolver los problemas de maximización con restricciones es el *método del multiplicador lagrangiano,* el cual entraña un inteligente truco matemático que también tiene una interpretación económica muy útil. La lógica de este método es bastante sencilla, pero aquí no se pretende hacer una presentación rigurosa. La técnica lagrangiana introduce una variable adicional (el multiplicador lagrangiano), el cual no sólo ayuda a resolver el problema en cuestión (puesto que ahora hay $n+1$ ecuaciones en $n+1$ incógnitas), sino que también tiene una interpretación útil en diversas circustancias económicas.
+
+## El Problema Formal 
+
+Mas concretamente, suponga que desea calcular los valores de $x_1,x_2, . . . , x_n$ que maximizan
+
+$$
+y = f(x_1,x_2, . . . , x_n)
+$$
+
+sujeto a una restrición que sólo permite utilizar ciertos valores de las $x$. Una forma general de escribir esa restricción es
+
+$$
+g(x_1,x_2, . . . , x_n) = 0
+$$
+
+donde la función $g$ representa la relación que se debe cumplir en todas las $x$.
+
+## Condiciones de Primer Orden 
+
+El método del multiplicador lagrangiano parte de la formulación de la expresión
+
+$$
+L = f(x_1,x_2, . . . , x_n) + \lambda g(x_1,x_2, . . . , x_n)\hspace{1cm} (4)$$
+
+donde $\lambda$ es una variable adiconal llamada multiplicador lagrangiano. consideraremos a $\lambda$ también una variable (además de las $x$). A partir de la ecuación (4) las condiciones para alcanzar un punto critico son
+
+$$
+\begin{eqnarray}
+\frac{\partial L}{\partial x_1} &=& f_1 + \lambda g_1 = 0\\[0.2cm]
+\frac{\partial L}{\partial x_2} &=& f_2 + \lambda g_2 = 0\\[0.2cm]
+&\vdots&\\[0.2cm]
+\frac{\partial L}{\partial x_n} &=& f_n + \lambda g_n = 0\\[0.2cm]
+\frac{\partial L}{\partial \lambda} &=& g(x_1, x_2, . . . , x_n) = 0
+\end{eqnarray}
+$$
+
+Así, las ecuaciones previas son las condiciones para obtener un punto crítico de la función $L$. Notese que hay $n+1$ ecuaciones (una para cada $x$ y otra más para $\lambda$) en $n+1$ incógnitas. En general, es posible resolver las ecuaciones para $x_1,x_2, . . . , x_n$, y para $\lambda$.
+
+### Interpretación del Multiplicador Lagrangiano 
+
+Hasta aquí se ha utilizado el multiplicador lagrangiano $(\lambda)$ únicamente como un "truco" matemático para llegar a la solución que se quería. De hecho, esta variable también tiene una importante interpretación económica, la cual será fundamental para nuestro análisis. Para desarrollar esta interpretación, es necesario volver a escribir las primeras $n$ ecuaciones como
+
+$$
+\frac{f_1}{-g_1} = \frac{f_2}{-g_2} = . . . = \frac{f_n}{-g_n} = \lambda \hspace{2cm} (5)
+$$
+
+En otras palabras, en el punto, máximo, la proporción de $f_i$ respecto a $g_i$ es la misma para todas las $x_i$. Los numeradores de las ecuaciones previas son las contribuciones marginales de cada $x_i$ obtendrá en la función que se está maximizando (es decir $f$).
+
+Utilizando terminología actual, podría escribirse esta restricción de forma implícita como
+
+$$
+g(x_1, x_2) = F - p_1x_1 - p_2x_2 = 0
+$$
+
+En esta situación, se tendría
+
+$$
+-g_i = p_i
+$$
+
+y la derivada $-g_i$ refleja, en efecto, el costo marginal por unidad derivado de utilizar $x_i$. Prácticamente todos los problemas de optimización que se encontrarán en capítulos posteriores hacen una interpretación similar de los denominadores de la ecuaciones (5).
