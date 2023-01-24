@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="references.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -83,12 +83,9 @@ set in the _output.yml file.</p>" />
 <ul>
 <li class="chapter" data-level="1.1" data-path="maximización-de-una-función-con-una-variable..html"><a href="maximización-de-una-función-con-una-variable..html#condición-de-primer-orden-para-el-máximo."><i class="fa fa-check"></i><b>1.1</b> Condición de primer orden para el máximo.</a></li>
 <li class="chapter" data-level="1.2" data-path="maximización-de-una-función-con-una-variable..html"><a href="maximización-de-una-función-con-una-variable..html#segundas-derivadas"><i class="fa fa-check"></i><b>1.2</b> Segundas Derivadas</a></li>
-<li class="chapter" data-level="1.3" data-path="maximización-de-una-función-con-una-variable..html"><a href="maximización-de-una-función-con-una-variable..html#funciones-con-varias-variables"><i class="fa fa-check"></i><b>1.3</b> Funciones con varias variables</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="maximización-de-una-función-con-una-variable..html"><a href="maximización-de-una-función-con-una-variable..html#derivadas-parciales"><i class="fa fa-check"></i><b>1.3.1</b> Derivadas Parciales</a></li>
+<li class="chapter" data-level="1.3" data-path="maximización-de-una-función-con-una-variable..html"><a href="maximización-de-una-función-con-una-variable..html#funciones-con-varias-variables"><i class="fa fa-check"></i><b>1.3</b> Funciones con varias variables</a></li>
+<li class="chapter" data-level="1.4" data-path="maximización-de-una-función-con-una-variable..html"><a href="maximización-de-una-función-con-una-variable..html#derivadas-parciales"><i class="fa fa-check"></i><b>1.4</b> Derivadas Parciales</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -146,8 +143,9 @@ Por tanto, la condición adicionalmente para que <span class="math inline">\(q^*
 <h2><span class="header-section-number">1.3</span> Funciones con varias variables<a href="maximización-de-una-función-con-una-variable..html#funciones-con-varias-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Los problemas económicos no suelen implicar funciones de una sola variable. La mayor parte de las metas que interesan a los agentes económicos dependen de varias variables y ellos deben elegir de entre éstas. Por ejemplo, la <code>utilidad</code> que obtiene un individuo de sus actividades como consumidor dependerá de la cantidad que consuma de cada bien. En el caso de la función de <code>producción</code> de una empresa, la cantidad producida dependerá de la cantidad de trabajo, capital y tierra dedicados a la producción. En estas circunstancias, el hecho de que esta variable <span class="math inline">\((y)\)</span> dependa de una serie de otras variables <span class="math inline">\((x_1, x_2, . . . , x_n)\)</span> es escribe
 <span class="math display">\[y = f(x_1,x_2, . . . , x_n)\]</span></p>
-<div id="derivadas-parciales" class="section level3 hasAnchor" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Derivadas Parciales<a href="maximización-de-una-función-con-una-variable..html#derivadas-parciales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="derivadas-parciales" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Derivadas Parciales<a href="maximización-de-una-función-con-una-variable..html#derivadas-parciales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Nos interesa calcular el punto en el cual <span class="math inline">\(y\)</span> alcanza su valor máximo, así como los intercambios que se deben hacer para alcanzar ese punto. De nuevo, resultaría más fácil pensar que el agente cambia las variables que están a su disposición (las <span class="math inline">\(x\)</span>) para poder encontrar un máximo. Por desgracia, con una función de varias variables, la idea de la derivada no esta bien definida. Tal como la pendiente de ascensión a una montaña dependerá de la dirección que se lleve la pendiente o la derivada de una función dependerá de la función que se elija. Por lo general, las únicas pendientes direccionales de interés son las que se obtienen aumentando una de las x mientras que todas las demás variables permanecen constantes. Estas pendientes direccionales se denominan derivadas parciales. La derivada de <span class="math inline">\(y\)</span> respecto a <span class="math inline">\(x_1\)</span> se escribe como</p>
 <p><span class="math display">\[\frac{\partial y}{\partial x_1}\hspace{0.2cm}o\hspace{0.2cm}\frac{\partial f}{\partial x_1}\hspace{0.2cm}o\hspace{0.2cm} f_{x_{1}}\hspace{0.2cm}o\hspace{0.2cm}f_1\]</span></p>
 <p>Queda entendido que al calcular esta derivada se mantiene constante el valor de todas las demás <span class="math inline">\(x\)</span>. De nuevo, es preciso destacar que el valor numérico de esta pendiente depende del valor que tome <span class="math inline">\(x_1\)</span> y del valor (predeterminado) de <span class="math inline">\(x_2, . . . , x_n\)</span>.</p>
@@ -157,14 +155,13 @@ donde la notación indica que <span class="math inline">\(x_{2}, . . . , x_n\)</
 
 </div>
 </div>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -195,7 +192,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-cross-refs.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/404.Rmd",
 "text": "Edit"
 },
 "history": {
