@@ -13,6 +13,7 @@ book:
     - references.qmd
     - d_total.qmd
     - M_lagrange.qmd
+    - teorema_env.qmd
 
 bibliography: references.bib
 

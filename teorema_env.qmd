@@ -1,0 +1,35 @@
+# Teorema del Envolvente
+
+Supóngase que se quiere obtener el valor máximo de
+
+$$
+y = f(x_1, . . . , x_n; a)
+$$
+
+sujeto a la restricción
+
+$$
+g(x_1, . . . , x_n; a) = 0
+$$
+
+donde se ha hecho explícito que las funciones $f$ y $g$ dependen de un parámetro, $a$. Como se ha demostrado, una forma de solucionar este problema consiste en escribir la expresión lagrangiana
+
+$$
+L = f(x_1, . . . , x_n; a) + \lambda(x_1, . . . , x_n; a)
+$$
+
+y resolver las condiciones de primer orden para los valores óptimos con restricciones $x_1^*, . . . , x_n^*$. De manera alternativa, es posible demostrar que
+
+$$
+\frac{dy^*}{da} = \frac{\partial L}{\partial a}(x_1^*, . . . , x_n^*)
+$$
+
+Es decir, se puede determinar la variación del valor máximo de $y$ que resulta de un cambio en el parametro $a$.
+
+# Funciones Homogeneas 
+
+Muchas de las funciones que surgen de forma natural de la teoría económica tienen otras propiedades matemáticas. Un conjunto de propiedades particularmente importante se refiere al comportamiento que observan estas funciones cuando todos sus argumentos incrementan proporcionalmente. Estas situaciones se presentan cuando nos planteamos preguntas como qué ocurriría si todos los precios incrementan 10% o cómo cambiaría la producción de una empresa si duplicara todos los insumos que utiliza. El análisis de estas preguntas conduce, de forma natural, al concepto de las funciones homogéneas. En concreto, se dice que una función $f(x_1,x_2, . . . , x_n)$ es homogénea de grado $k$ si
+
+$$
+f(tx_1,tx_2, . . , tx_n) = t^kf(x_1,x_2, . . . , xn)
+$$

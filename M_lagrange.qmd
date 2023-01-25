@@ -6,7 +6,7 @@ Hasta ahora nos hemos centrado en determinar el valor máximo de una función si
 
 Un método para resolver los problemas de maximización con restricciones es el *método del multiplicador lagrangiano,* el cual entraña un inteligente truco matemático que también tiene una interpretación económica muy útil. La lógica de este método es bastante sencilla, pero aquí no se pretende hacer una presentación rigurosa. La técnica lagrangiana introduce una variable adicional (el multiplicador lagrangiano), el cual no sólo ayuda a resolver el problema en cuestión (puesto que ahora hay $n+1$ ecuaciones en $n+1$ incógnitas), sino que también tiene una interpretación útil en diversas circustancias económicas.
 
-## El Problema Formal 
+## El Problema Formal
 
 Mas concretamente, suponga que desea calcular los valores de $x_1,x_2, . . . , x_n$ que maximizan
 
@@ -22,7 +22,7 @@ $$
 
 donde la función $g$ representa la relación que se debe cumplir en todas las $x$.
 
-## Condiciones de Primer Orden 
+## Condiciones de Primer Orden
 
 El método del multiplicador lagrangiano parte de la formulación de la expresión
 
@@ -43,7 +43,7 @@ $$
 
 Así, las ecuaciones previas son las condiciones para obtener un punto crítico de la función $L$. Notese que hay $n+1$ ecuaciones (una para cada $x$ y otra más para $\lambda$) en $n+1$ incógnitas. En general, es posible resolver las ecuaciones para $x_1,x_2, . . . , x_n$, y para $\lambda$.
 
-### Interpretación del Multiplicador Lagrangiano 
+### Interpretación del Multiplicador Lagrangiano
 
 Hasta aquí se ha utilizado el multiplicador lagrangiano $(\lambda)$ únicamente como un "truco" matemático para llegar a la solución que se quería. De hecho, esta variable también tiene una importante interpretación económica, la cual será fundamental para nuestro análisis. Para desarrollar esta interpretación, es necesario volver a escribir las primeras $n$ ecuaciones como
 
@@ -66,3 +66,81 @@ $$
 $$
 
 y la derivada $-g_i$ refleja, en efecto, el costo marginal por unidad derivado de utilizar $x_i$. Prácticamente todos los problemas de optimización que se encontrarán en capítulos posteriores hacen una interpretación similar de los denominadores de la ecuaciones (5).
+
+### El multiplicador lagrangiano como proporción de costos a beneficios 
+
+Ahora es posible interpretar las ecuaciones (5) en forma intuitiva. Estas indican que, para los valores óptimos de las $x$, la proporción de beneficios marginales por incrementar $x_i$ con relación a los costos marginales por incrementar $x_i$ debería ser la misma para cada $x$.
+
+También es posible interpretar el multiplicador lagrangiano $(\lambda)$ a la luz de este análisis. $\lambda$ es la proporción común de costos a beneficios de todas las $x$. Es decir,
+
+$$
+\lambda = \frac{beneficio\hspace{0.1cm} marginal\hspace{0.1cm}de\hspace{0.1cm} x_i}{costo\hspace{0.1cm}marginal\hspace{0.1cm} de \hspace{0.1cm}x_i}
+$$
+
+para cada $x_i$. Si relajáramos lijeramente la restricción, no importaría cuál de las $x$ cambia (de hecho, podrían variarse todas las $x$ porque, en el margen, cada una promete la misma proporción de beneficios respecto a los costos). En consecuencia, el multiplicador lagrangiano proporciona una medida de cómo esta relajación general de la restricción afectaria el valor de $y$. En consecuencia, $\lambda$ asigna un *precio sombra* a la restricción.
+
+-    Un $\lambda$ alto indica que se podría aumentar $y$ sustancialmente si se relaja la restricción, porque cada $x$ tiene una proporción alta de costos a beneficios.
+
+-   De otra forma, un valor bajo de $\lambda$, indica que no es posible ganar mucho si se relaja la restricción.
+
+-   Si la restricción es inactiva en absoluto, entonces $\lambda$ tendrá un valor de cero, indicando así que la restricción no limita el valor de $y$.
+
+También es posible demostrar esta interpretación de $\lambda$ utilizando el teorema del *Envolvente* como se describira posterioremente.
+
+## Ejemplo 
+
+Supongamos que el objetivo de un individuo es maximizar un problema del área de la salud.
+
+$$
+y = -x_1^2 + 2x_1 - x_2^2 + 4x_2 + 5
+$$
+
+y suponga que las opciones de $x_1$ y $x_2$ están restringidas por el hecho de que el individuo sólo tolera una dosis de medicamentos por día. Es decir,
+
+$$
+x_1 + x_2 = 1
+$$
+
+Para lograr el objetivo, planteemos la expresión Lagrangiana:
+
+$$
+L = -x_1^2 + 2x_1 - x_2^2 + 4x_2 + 5 + \lambda(1 - x_1 - x_2)
+$$
+
+Si derivamos $L$ respecto a $x_1, x_2$ y $\lambda$ se obtiene la siguiente condición necesaria para obtener un máximo con restricciones:
+
+$$
+\begin{eqnarray}
+\frac{\partial L}{\partial x_1} &=& -2x_1 + 2 - \lambda = 0\\[0.2cm]
+\frac{\partial L}{\partial x_2} &=& -2x_2 + 4 - \lambda = 0\\[0.2cm]
+\frac{\partial L}{\partial \lambda} &=& 1 - x_1 - x_2 = 0
+\end{eqnarray}
+$$
+
+Se debe resolver estas ecuaciones para obtener los valores óptimos de $x_1,x_2$ y $x_2$. Al utilizar la primera y la segunda ecuación se obtiene
+
+$$
+-2x_1 + 2 = \lambda = -2x_2 + 4$$
+
+o
+
+$$
+x_1 = x_2 -1 
+$$
+
+La sustitución de este valor por $x_1$ en la restricción ofrece la solución:
+
+$$
+x_2 = 1\\
+x_1 = 0
+$$
+
+En otras palabras, si esta persona sólo tolera una dosis de medicamentos, entonces debe optar por tomar sólo el segundo medicamento. Al utilizar una de las dos primeras ecuaciones, es fácil completar la solución al demostrar que
+
+$$
+\lambda = 2
+$$
+
+Por tanto, esta es la solución al problema de maximización con restricciones. Si $x_1 = 0, x_2 = 1$, entonces $y$ toma el valor de 8.
+
+*¿Suponga que este individuo pudiera tolerar dos dosis por día?. ¿Esperaría usted que* $y$ *aumentará? ¿Los incrementos en su tolerancia más allá de tres dosis al día tendrían efecto en* $y$*?*

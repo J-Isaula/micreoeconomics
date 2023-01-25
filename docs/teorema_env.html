@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Microeconomía - 2&nbsp; Funciones con varias variables</title>
+<title>Microeconomía - 5&nbsp; Teorema del Envolvente</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./M_lagrange.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funciones con varias variables</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Teorema del Envolvente</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -106,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funciones con varias variables</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funciones con varias variables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -126,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teorema_env.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Teorema del Envolvente</span></a>
+  <a href="./teorema_env.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Teorema del Envolvente</span></a>
   </div>
 </li>
     </ul>
@@ -138,10 +137,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#derivadas-parciales" id="toc-derivadas-parciales" class="nav-link active" data-scroll-target="#derivadas-parciales"><span class="toc-section-number">2.1</span>  Derivadas Parciales</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="toc-section-number">2.1.1</span>  Ejemplo</a></li>
-  </ul></li>
+  <li><a href="#funciones-homogeneas" id="toc-funciones-homogeneas" class="nav-link active" data-scroll-target="#funciones-homogeneas"><span class="toc-section-number">6</span>  Funciones Homogeneas</a></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funciones con varias variables</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Teorema del Envolvente</span></h1>
 </div>
 
 
@@ -165,34 +161,31 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Los problemas económicos no suelen implicar funciones de una sola variable. La mayor parte de las metas que interesan a los agentes económicos dependen de varias variables y ellos deben elegir de entre éstas. Por ejemplo, la <em>utilidad</em> que obtiene un individuo de sus actividades como consumidor dependerá de la cantidad que consuma de cada bien. En el caso de la función de <em>producción</em> de una empresa, la cantidad producida dependerá de la cantidad de trabajo, capital y tierra dedicados a la producción. En estas circunstancias, el hecho de que esta variable <span class="math inline">\((y)\)</span> depende de una serie de otras variables <span class="math inline">\((x_1,x_2, . . . , x_n)\)</span> se escribe</p>
+<p>Supóngase que se quiere obtener el valor máximo de</p>
 <p><span class="math display">\[
-y = f(x_1,x_2, . . . , x_n)
+y = f(x_1, . . . , x_n; a)
 \]</span></p>
-<section id="derivadas-parciales" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="derivadas-parciales"><span class="header-section-number">2.1</span> Derivadas Parciales</h2>
-<p>Nos interesa calcular el punto en el cual <span class="math inline">\(y\)</span> alcanza su valor máximo, así como los intercambios que se deben hacer para alcanzar ese punto. De nuevo, resultaría más fácil pensar que el agente cambia las variables que están a su disposición (las <span class="math inline">\(x\)</span>) para poder encontrar un máximo. Por desgracia, con una función de varias variables, la idea de la derivada no está bien definida. Tal como la pendiente de ascensión a una montaña dependerá de la dirección que se lleve, la pendiente (o la derivada) de una función dependerá de la dirección que se elija. Por lo general, las únicas pendientes direccionales de interés son las que se obtienen aumentando una de las <span class="math inline">\(x\)</span> mientras que todas las demás variables permanecen constantes (en la analogía de la montaña podrían medirse las pendientes sólo en dirección norte-sur o este-oeste). Estas pendientes direccionales se denominan <em>derivadas parciales</em> la derivada parcial de <em>y</em> respecto a <span class="math inline">\(x_1\)</span> se escribe como,</p>
+<p>sujeto a la restricción</p>
 <p><span class="math display">\[
-\frac{\partial y}{\partial x_1}\hspace{0.2cm}o\hspace{0.2cm}\frac{\partial f}{\partial x_1} \hspace{0.2cm}o\hspace{0.2cm} f_{x_1} \hspace{0.2cm}o\hspace{0.2cm} f_1
+g(x_1, . . . , x_n; a) = 0
 \]</span></p>
-<p>Queda entendido que al calcular esta derivada se mantiene constante el valor de todas las demás <span class="math inline">\(x\)</span>. De nuevo, es preciso destacar que el valor numérico de esta pendiente depende del valor que tome <span class="math inline">\(x_1\)</span> y el valor (predeterminado) de <span class="math inline">\(x_2, . . . , x_n\)</span>.</p>
-<p>Una definición algo más formal de la derivada parcial es</p>
+<p>donde se ha hecho explícito que las funciones <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> dependen de un parámetro, <span class="math inline">\(a\)</span>. Como se ha demostrado, una forma de solucionar este problema consiste en escribir la expresión lagrangiana</p>
 <p><span class="math display">\[
-\left.\begin{array}{c}\frac{\partial f}{\partial x_1} \end{array}\right|_{\overline{x}_2, . . . , \overline{x}_n} = \lim_{h\rightarrow 0} \frac{f(x_1 + h,\overline{x}_2, . . . , \overline{x}_n ) - f(x_1,\overline{x}_2, . . . , \overline{x}_n)}{h}
-\]</span> donde la notación indica que <span class="math inline">\(x_2, . . . , x_n\)</span> se mantienen constantes en los valores predeterminados <span class="math inline">\(\overline{x}_2, . . . , \overline{x}_n\)</span> de forma que podamos estudiar únicamente el efecto del cambio de <span class="math inline">\(x_1\)</span>.</p>
-<section id="ejemplo" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">2.1.1</span> Ejemplo</h3>
-<p>Si <span class="math inline">\(f(x_1,x_2) = ax_1^2 + bx_1x_2 + cx_2^2\)</span> entonces</p>
-<p><span class="math display">\[
-\begin{eqnarray}
-\frac{\partial f}{\partial x_1} &amp;=&amp; f_1 = 2ax_1 + bx_2\\[0.2cm]
-\frac{\partial f}{\partial x_2} &amp;=&amp; f_2 = bx_1 + 2cx_2
-\end{eqnarray}
+L = f(x_1, . . . , x_n; a) + \lambda(x_1, . . . , x_n; a)
 \]</span></p>
-<p>Nótese que, en general <span class="math inline">\(\partial f/\partial x_1\)</span> es función de <span class="math inline">\(x_1\)</span> como de <span class="math inline">\(x_2\)</span> y, por tanto, su valor dependerá de los valores particulares que se asignen a estas variables. Asimismo dependerá de los parámetros <span class="math inline">\(a,b\)</span> y <span class="math inline">\(c\)</span>, los cuales no cambian a medida que <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> cambian.</p>
+<p>y resolver las condiciones de primer orden para los valores óptimos con restricciones <span class="math inline">\(x_1^*, . . . , x_n^*\)</span>. De manera alternativa, es posible demostrar que</p>
+<p><span class="math display">\[
+\frac{dy^*}{da} = \frac{\partial L}{\partial a}(x_1^*, . . . , x_n^*)
+\]</span></p>
+<p>Es decir, se puede determinar la variación del valor máximo de <span class="math inline">\(y\)</span> que resulta de un cambio en el parametro <span class="math inline">\(a\)</span>.</p>
+<section id="funciones-homogeneas" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Funciones Homogeneas</h1>
+<p>Muchas de las funciones que surgen de forma natural de la teoría económica tienen otras propiedades matemáticas. Un conjunto de propiedades particularmente importante se refiere al comportamiento que observan estas funciones cuando todos sus argumentos incrementan proporcionalmente. Estas situaciones se presentan cuando nos planteamos preguntas como qué ocurriría si todos los precios incrementan 10% o cómo cambiaría la producción de una empresa si duplicara todos los insumos que utiliza. El análisis de estas preguntas conduce, de forma natural, al concepto de las funciones homogéneas. En concreto, se dice que una función <span class="math inline">\(f(x_1,x_2, . . . , x_n)\)</span> es homogénea de grado <span class="math inline">\(k\)</span> si</p>
+<p><span class="math display">\[
+f(tx_1,tx_2, . . , tx_n) = t^kf(x_1,x_2, . . . , xn)
+\]</span></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -331,14 +324,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Maximización de una función con una variable</span></span>
+      <a href="./M_lagrange.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maximización con Restricciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">Elasticidad: definición general</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

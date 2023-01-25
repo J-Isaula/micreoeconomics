@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./teorema_env.html" rel="next">
 <link href="./d_total.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -123,6 +124,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./M_lagrange.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maximización con Restricciones</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teorema_env.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">teorema_env.html</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -137,7 +143,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#condiciones-de-primer-orden" id="toc-condiciones-de-primer-orden" class="nav-link" data-scroll-target="#condiciones-de-primer-orden"><span class="toc-section-number">4.3</span>  Condiciones de Primer Orden</a>
   <ul class="collapse">
   <li><a href="#interpretación-del-multiplicador-lagrangiano" id="toc-interpretación-del-multiplicador-lagrangiano" class="nav-link" data-scroll-target="#interpretación-del-multiplicador-lagrangiano"><span class="toc-section-number">4.3.1</span>  Interpretación del Multiplicador Lagrangiano</a></li>
+  <li><a href="#el-multiplicador-lagrangiano-como-proporción-de-costos-a-beneficios" id="toc-el-multiplicador-lagrangiano-como-proporción-de-costos-a-beneficios" class="nav-link" data-scroll-target="#el-multiplicador-lagrangiano-como-proporción-de-costos-a-beneficios"><span class="toc-section-number">4.3.2</span>  El multiplicador lagrangiano como proporción de costos a beneficios</a></li>
   </ul></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="toc-section-number">4.4</span>  Ejemplo</a></li>
   </ul>
 </nav>
     </div>
@@ -210,9 +218,65 @@ g(x_1, x_2) = F - p_1x_1 - p_2x_2 = 0
 -g_i = p_i
 \]</span></p>
 <p>y la derivada <span class="math inline">\(-g_i\)</span> refleja, en efecto, el costo marginal por unidad derivado de utilizar <span class="math inline">\(x_i\)</span>. Prácticamente todos los problemas de optimización que se encontrarán en capítulos posteriores hacen una interpretación similar de los denominadores de la ecuaciones (5).</p>
-
-
 </section>
+<section id="el-multiplicador-lagrangiano-como-proporción-de-costos-a-beneficios" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="el-multiplicador-lagrangiano-como-proporción-de-costos-a-beneficios"><span class="header-section-number">4.3.2</span> El multiplicador lagrangiano como proporción de costos a beneficios</h3>
+<p>Ahora es posible interpretar las ecuaciones (5) en forma intuitiva. Estas indican que, para los valores óptimos de las <span class="math inline">\(x\)</span>, la proporción de beneficios marginales por incrementar <span class="math inline">\(x_i\)</span> con relación a los costos marginales por incrementar <span class="math inline">\(x_i\)</span> debería ser la misma para cada <span class="math inline">\(x\)</span>.</p>
+<p>También es posible interpretar el multiplicador lagrangiano <span class="math inline">\((\lambda)\)</span> a la luz de este análisis. <span class="math inline">\(\lambda\)</span> es la proporción común de costos a beneficios de todas las <span class="math inline">\(x\)</span>. Es decir,</p>
+<p><span class="math display">\[
+\lambda = \frac{beneficio\hspace{0.1cm} marginal\hspace{0.1cm}de\hspace{0.1cm} x_i}{costo\hspace{0.1cm}marginal\hspace{0.1cm} de \hspace{0.1cm}x_i}
+\]</span></p>
+<p>para cada <span class="math inline">\(x_i\)</span>. Si relajáramos lijeramente la restricción, no importaría cuál de las <span class="math inline">\(x\)</span> cambia (de hecho, podrían variarse todas las <span class="math inline">\(x\)</span> porque, en el margen, cada una promete la misma proporción de beneficios respecto a los costos). En consecuencia, el multiplicador lagrangiano proporciona una medida de cómo esta relajación general de la restricción afectaria el valor de <span class="math inline">\(y\)</span>. En consecuencia, <span class="math inline">\(\lambda\)</span> asigna un <em>precio sombra</em> a la restricción.</p>
+<ul>
+<li><p>Un <span class="math inline">\(\lambda\)</span> alto indica que se podría aumentar <span class="math inline">\(y\)</span> sustancialmente si se relaja la restricción, porque cada <span class="math inline">\(x\)</span> tiene una proporción alta de costos a beneficios.</p></li>
+<li><p>De otra forma, un valor bajo de <span class="math inline">\(\lambda\)</span>, indica que no es posible ganar mucho si se relaja la restricción.</p></li>
+<li><p>Si la restricción es inactiva en absoluto, entonces <span class="math inline">\(\lambda\)</span> tendrá un valor de cero, indicando así que la restricción no limita el valor de <span class="math inline">\(y\)</span>.</p></li>
+</ul>
+<p>También es posible demostrar esta interpretación de <span class="math inline">\(\lambda\)</span> utilizando el teorema del <em>Envolvente</em> como se describira posterioremente.</p>
+</section>
+</section>
+<section id="ejemplo" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">4.4</span> Ejemplo</h2>
+<p>Supongamos que el objetivo de un individuo es maximizar un problema del área de la salud.</p>
+<p><span class="math display">\[
+y = -x_1^2 + 2x_1 - x_2^2 + 4x_2 + 5
+\]</span></p>
+<p>y suponga que las opciones de <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> están restringidas por el hecho de que el individuo sólo tolera una dosis de medicamentos por día. Es decir,</p>
+<p><span class="math display">\[
+x_1 + x_2 = 1
+\]</span></p>
+<p>Para lograr el objetivo, planteemos la expresión Lagrangiana:</p>
+<p><span class="math display">\[
+L = -x_1^2 + 2x_1 - x_2^2 + 4x_2 + 5 + \lambda(1 - x_1 - x_2)
+\]</span></p>
+<p>Si derivamos <span class="math inline">\(L\)</span> respecto a <span class="math inline">\(x_1, x_2\)</span> y <span class="math inline">\(\lambda\)</span> se obtiene la siguiente condición necesaria para obtener un máximo con restricciones:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+\frac{\partial L}{\partial x_1} &amp;=&amp; -2x_1 + 2 - \lambda = 0\\[0.2cm]
+\frac{\partial L}{\partial x_2} &amp;=&amp; -2x_2 + 4 - \lambda = 0\\[0.2cm]
+\frac{\partial L}{\partial \lambda} &amp;=&amp; 1 - x_1 - x_2 = 0
+\end{eqnarray}
+\]</span></p>
+<p>Se debe resolver estas ecuaciones para obtener los valores óptimos de <span class="math inline">\(x_1,x_2\)</span> y <span class="math inline">\(x_2\)</span>. Al utilizar la primera y la segunda ecuación se obtiene</p>
+<p><span class="math display">\[
+-2x_1 + 2 = \lambda = -2x_2 + 4\]</span></p>
+<p>o</p>
+<p><span class="math display">\[
+x_1 = x_2 -1
+\]</span></p>
+<p>La sustitución de este valor por <span class="math inline">\(x_1\)</span> en la restricción ofrece la solución:</p>
+<p><span class="math display">\[
+x_2 = 1\\
+x_1 = 0
+\]</span></p>
+<p>En otras palabras, si esta persona sólo tolera una dosis de medicamentos, entonces debe optar por tomar sólo el segundo medicamento. Al utilizar una de las dos primeras ecuaciones, es fácil completar la solución al demostrar que</p>
+<p><span class="math display">\[
+\lambda = 2
+\]</span></p>
+<p>Por tanto, esta es la solución al problema de maximización con restricciones. Si <span class="math inline">\(x_1 = 0, x_2 = 1\)</span>, entonces <span class="math inline">\(y\)</span> toma el valor de 8.</p>
+<p><em>¿Suponga que este individuo pudiera tolerar dos dosis por día?. ¿Esperaría usted que</em> <span class="math inline">\(y\)</span> <em>aumentará? ¿Los incrementos en su tolerancia más allá de tres dosis al día tendrían efecto en</em> <span class="math inline">\(y\)</span><em>?</em></p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -356,6 +420,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./teorema_env.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">teorema_env.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
