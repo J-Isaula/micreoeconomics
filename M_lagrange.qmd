@@ -67,7 +67,7 @@ $$
 
 y la derivada $-g_i$ refleja, en efecto, el costo marginal por unidad derivado de utilizar $x_i$. Prácticamente todos los problemas de optimización que se encontrarán en capítulos posteriores hacen una interpretación similar de los denominadores de la ecuaciones (5).
 
-### El multiplicador lagrangiano como proporción de costos a beneficios 
+### El multiplicador lagrangiano como proporción de costos a beneficios
 
 Ahora es posible interpretar las ecuaciones (5) en forma intuitiva. Estas indican que, para los valores óptimos de las $x$, la proporción de beneficios marginales por incrementar $x_i$ con relación a los costos marginales por incrementar $x_i$ debería ser la misma para cada $x$.
 
@@ -79,7 +79,7 @@ $$
 
 para cada $x_i$. Si relajáramos lijeramente la restricción, no importaría cuál de las $x$ cambia (de hecho, podrían variarse todas las $x$ porque, en el margen, cada una promete la misma proporción de beneficios respecto a los costos). En consecuencia, el multiplicador lagrangiano proporciona una medida de cómo esta relajación general de la restricción afectaria el valor de $y$. En consecuencia, $\lambda$ asigna un *precio sombra* a la restricción.
 
--    Un $\lambda$ alto indica que se podría aumentar $y$ sustancialmente si se relaja la restricción, porque cada $x$ tiene una proporción alta de costos a beneficios.
+-   Un $\lambda$ alto indica que se podría aumentar $y$ sustancialmente si se relaja la restricción, porque cada $x$ tiene una proporción alta de costos a beneficios.
 
 -   De otra forma, un valor bajo de $\lambda$, indica que no es posible ganar mucho si se relaja la restricción.
 
@@ -87,7 +87,7 @@ para cada $x_i$. Si relajáramos lijeramente la restricción, no importaría cu�
 
 También es posible demostrar esta interpretación de $\lambda$ utilizando el teorema del *Envolvente* como se describira posterioremente.
 
-## Ejemplo 
+## Ejemplo
 
 Supongamos que el objetivo de un individuo es maximizar un problema del área de la salud.
 
@@ -144,3 +144,64 @@ $$
 Por tanto, esta es la solución al problema de maximización con restricciones. Si $x_1 = 0, x_2 = 1$, entonces $y$ toma el valor de 8.
 
 *¿Suponga que este individuo pudiera tolerar dos dosis por día?. ¿Esperaría usted que* $y$ *aumentará? ¿Los incrementos en su tolerancia más allá de tres dosis al día tendrían efecto en* $y$*?*
+
+## Definición General 
+
+Sea $f$ y $g_i$, $j = 1, . . . , J$ funciones mapeadas desde $\mathbb{R^n}$ a $\mathbb{R}$.
+
+Considere el problema de maximización con restricciones de la siguiente manera:
+
+$$
+\max_{x = (x_1, . . . , x_n)} f(x) \hspace{0.3cm}sujeto\hspace{0.1cm} a\hspace{0.1cm} g_j(x)\geq 0, \hspace{0.2cm} j = 1, . . . . , J
+$$
+
+Esto nos quiere decir que existen $J$ restricciones, cada una de las cuales está representada por una función $g$.
+
+Entonces, la la *función lagrangiana* se escribe de la siguiente manera:
+
+$$
+L(x,\lambda) = f(x) + \sum_{j=1}^J \lambda_j g_j(x)
+$$
+
+Llamamos $\lambda_j$, $j = 1, . . . , J$ Multiplicadores Lagrangianos.
+
+Nuestro objetivo siempre, es encontrar un vector $(x^*, \lambda^*)$ que resuelva las ecuaciones
+
+$$
+\begin{eqnarray}
+\frac{\partial L(x*,\lambda^*)}{\partial x_i} &=& 0,\hspace{0.3cm} \forall\hspace{0.1cm}  i= 1, . . . , n \\[0.2cm]
+\lambda_j^*g_j^*(x^*) &=& 0,\hspace{0.1cm} y\hspace{0.2cm} \lambda_j*\geq 0\hspace{0.3cm}\forall \hspace{0.1cm} j = 1, . . . , J
+\end{eqnarray}
+$$
+
+### Ejercicio a resolver en clase 
+
+Plantee el problema de maximización de la utilidad de la siguiente manera:
+
+$$
+\max_{x = (x_1,x_2)} u(x)
+$$
+
+sujeto a
+
+$$
+\begin{eqnarray}
+m - p_1x_1 - p_2x_2 &\geq& 0\\[0.2cm]
+x_1 &\geq& 0\\[0.2cm]
+x_2 &\geq& 0
+\end{eqnarray}
+$$
+
+La función lagrangiana correspondiente a este problema se puede escribir como
+
+$$
+L(x_1,x_2,\lambda) = u(x_1,x_2) + \lambda_1x_1 + \lambda_2x_2 + \lambda_3(m - p_1x_1 - p_2x_2)
+$$
+
+A continuación asumiremos que
+
+-   $u(x_1,x_2) = a\ln x_1 + (1-a)\ln x_2$,$\hspace{0.2cm}  a\in (0,1)$
+
+-   $u(x_1,x_2) = x_1 + \ln x_2$ además supongamos que $(p_1, p_2, m) = (4,1,3)$
+
+En cada caso correspondiente encuentre $x_1^*, x_2^*$.
